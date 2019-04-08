@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8c8f6718c7f84cc8b8e1399504a6817b" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="BARBERCONNECT_APPModel.Administrator" Width="1.5" PointX="5.875" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BARBERCONNECT_APPModel.Barber" Width="1.5" PointX="8.125" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="BARBERCONNECT_APPModel.Customer" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BARBERCONNECT_APPModel.LocationInfo" Width="1.5" PointX="0.875" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BARBERCONNECT_APPModel.Review" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BARBERCONNECT_APPModel.SelectionPage" Width="1.5" PointX="3.5" PointY="6.25" IsExpanded="true" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Administrator_Administrator" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Administrator_Administrator1" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Administrator_Barber" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Administrator_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Administrator_LocationInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Administrator_SelectionPage" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Barber_Barber" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Barber_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Barber_LocationInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Barber_Reviews" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_SelectionPage_Barber" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Customer_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Customer_Customer1" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Customer_Customer2" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Customer_Customer3" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Customer_LocationInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Customer_Reviews" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_LocationInfo_LocationInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="BARBERCONNECT_APPModel.FK_Reviews_Reviews" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
