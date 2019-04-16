@@ -34,7 +34,10 @@ SQL Scripts
 Wireframe
 ---
 ![WireFrame](https://user-images.githubusercontent.com/46760301/56192587-91369880-5fe3-11e9-97a3-bd0050db43e9.GIF)
+**Wireframe Ideas**
+For the wireframe I wanted to make it where they can post their pictures, a bio, show their location, their prices, and even get rated by customers they've served to give a customer some assurance when choosing their barber. I will have an up and running wireframe soon.
 
+---
 Class Diagram
 ---
 ![Class Diagram](https://user-images.githubusercontent.com/46760301/56192579-8c71e480-5fe3-11e9-8cbe-9137b958d278.GIF)
