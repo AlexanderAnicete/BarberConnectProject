@@ -4,7 +4,7 @@ An application that will connect Barbers and Customers easier than ever!
 ---
 Application URL: [Barberconnect.com](barberconnectproject.azurewebsites.net)
 ---
-#What is Barber Connect?
+##What is Barber Connect?
 ---
 Barber Connect is a website and application that will be able to connect Barbers and customers easier than ever.
 For Barbers, they can create a profile and showcase their work and what they're all about. Barbers will be able to post pictures 
