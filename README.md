@@ -24,3 +24,9 @@ Requirements
 [Powerpoint presentation for Barber Connect](https://onedrive.live.com/edit.aspx?cid=feda7124124f82b7&page=view&resid=FEDA7124124F82B7!711&parId=FEDA7124124F82B7!691&app=PowerPoint)
 
 ---
+
+SQL Scripts
+---
+![Database 1](https://user-images.githubusercontent.com/46760301/56192559-824fe600-5fe3-11e9-9cd3-0ef8b87a3696.GIF)
+
+![Databse 2](https://user-images.githubusercontent.com/46760301/56192560-82e87c80-5fe3-11e9-83e5-4e859b7e40c7.GIF)
