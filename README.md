@@ -34,3 +34,7 @@ SQL Scripts
 Wireframe
 ---
 ![WireFrame](https://user-images.githubusercontent.com/46760301/56192587-91369880-5fe3-11e9-97a3-bd0050db43e9.GIF)
+
+Class Diagram
+---
+![Class Diagram](https://user-images.githubusercontent.com/46760301/56192579-8c71e480-5fe3-11e9-8cbe-9137b958d278.GIF)
