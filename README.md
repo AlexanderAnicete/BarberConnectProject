@@ -31,10 +31,10 @@ SQL Scripts
 ![Databse 2](https://user-images.githubusercontent.com/46760301/56192560-82e87c80-5fe3-11e9-83e5-4e859b7e40c7.GIF)
 ---
 
-Wireframe
+Wireframe ideas for mobile
 ---
 ![WireFrame](https://user-images.githubusercontent.com/46760301/56192587-91369880-5fe3-11e9-97a3-bd0050db43e9.GIF)
-**Wireframe Ideas**  
+  
 --
 
 For the wireframe I wanted to make it where they can post their pictures, a bio, show their location, their prices, and even get rated by customers they've served to give a customer some assurance when choosing their barber. I will have an up and running wireframe soon.
