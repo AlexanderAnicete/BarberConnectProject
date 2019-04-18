@@ -34,10 +34,17 @@ SQL Scripts
 Wireframe ideas for mobile
 ---
 ![WireFrame](https://user-images.githubusercontent.com/46760301/56192587-91369880-5fe3-11e9-97a3-bd0050db43e9.GIF)
-  
+For the wireframe I wanted to make it where they can post their pictures, a bio, show their location, their prices, and even get rated by customers they've served to give a customer some assurance when choosing their barber. I will have an up and running wireframe soon.  
+ 
 --
 
-For the wireframe I wanted to make it where they can post their pictures, a bio, show their location, their prices, and even get rated by customers they've served to give a customer some assurance when choosing their barber. I will have an up and running wireframe soon.
+Current Page Progress
+--
+
+![Front page](https://user-images.githubusercontent.com/46760301/56352207-96cae480-6183-11e9-83b9-fee696e19633.JPG)
+
+![profile](https://user-images.githubusercontent.com/46760301/56352214-9894a800-6183-11e9-9e7a-6bbdbcbd258d.JPG)
+
 
 ---
 Class Diagram
