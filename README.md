@@ -23,7 +23,7 @@ of their work, create a bio to introduce themselves, post their schedule, prices
 
 |Requirements ID | Requirements | Implemented | Tested |
 
-| :---: | ;---; | :---: | :---: |
+| --- | --- | --- | --- |
 
 | 1 | Create Profile | Yes | No |
 
