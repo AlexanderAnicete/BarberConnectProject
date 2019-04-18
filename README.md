@@ -22,7 +22,7 @@ of their work, create a bio to introduce themselves, post their schedule, prices
 ---
 
 | Requirements ID | Requirements | Implemented | Tested |
-| --- | --- | --- | --- |
+| :---: | --- | --- | --- |
 | 1 | Create Profile | Yes | No |
 | 2 | User Login and Registration | Yes | No |
 | 3 | Email Confirmation | No | No |
