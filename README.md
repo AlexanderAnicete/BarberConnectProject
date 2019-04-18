@@ -22,27 +22,16 @@ of their work, create a bio to introduce themselves, post their schedule, prices
 ---
 
 |Requirements ID | Requirements | Implemented | Tested |
-
 | :---: | ;---; | :---: | :---: |
-
 | 1 | Create Profile | Yes | No |
-
 | 2 | User Login and Registration | Yes | No |
-
 | 3 | Email Confirmation | No | No |
-
 | 4 | Location API | No | No |
-
 | 5 | Search tab for customers | No | No |
-
 | 6 | Create and edit biography | No | No |
-
 | 7 | 5 Star Rating System | No | No |
-
 | 8 | Add Pictures to Profile | No | No |
-
 | --- | --- | --- | --- |
-
 
 --
 
