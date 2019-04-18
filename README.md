@@ -41,10 +41,11 @@ For the wireframe I wanted to make it where they can post their pictures, a bio,
 Current Page Progress
 --
 
-![Front page](https://user-images.githubusercontent.com/46760301/56352207-96cae480-6183-11e9-83b9-fee696e19633.JPG)
+![Front page](https://user-images.githubusercontent.com/46760301/56352511-3ee0ad80-6184-11e9-96fa-e4f8b8d95c05.JPG)
+
+--
 
 ![profile](https://user-images.githubusercontent.com/46760301/56352214-9894a800-6183-11e9-9e7a-6bbdbcbd258d.JPG)
-
 
 ---
 Class Diagram
