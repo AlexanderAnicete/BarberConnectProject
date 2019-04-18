@@ -41,7 +41,7 @@ of their work, create a bio to introduce themselves, post their schedule, prices
 
 | 8 | Add Pictures to Profile | No | No |
 
-| --- | --- | --- | --- |
+
 
 --
 
