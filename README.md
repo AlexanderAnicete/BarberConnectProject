@@ -5,7 +5,7 @@ An application that will make getting fresh haircuts more convenient.
 
 ---
 
-Application URL: [Barberconnect.com](barberconnectapp2.azurewebsites.net)
+Application URL: [Barberconnect.com](https://barberconnectapp2.azurewebsites.net)
 
 ---
 
