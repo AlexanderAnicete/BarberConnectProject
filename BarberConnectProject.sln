@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberConnectProject", "BarberConnectProject\BarberConnectProject.csproj", "{68825C26-14BE-4C6A-91B6-EDA771258884}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberConnectApp", "BarberConnectApp\BarberConnectApp.csproj", "{9649DD65-CB2C-449C-95F0-19EAD9B2E8BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberConnectTests", "BarberConnectTests\BarberConnectTests.csproj", "{83D45FD0-9D9B-4D5A-B04D-0A226F410CF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{68825C26-14BE-4C6A-91B6-EDA771258884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68825C26-14BE-4C6A-91B6-EDA771258884}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68825C26-14BE-4C6A-91B6-EDA771258884}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68825C26-14BE-4C6A-91B6-EDA771258884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9649DD65-CB2C-449C-95F0-19EAD9B2E8BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9649DD65-CB2C-449C-95F0-19EAD9B2E8BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9649DD65-CB2C-449C-95F0-19EAD9B2E8BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9649DD65-CB2C-449C-95F0-19EAD9B2E8BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83D45FD0-9D9B-4D5A-B04D-0A226F410CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D45FD0-9D9B-4D5A-B04D-0A226F410CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D45FD0-9D9B-4D5A-B04D-0A226F410CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D45FD0-9D9B-4D5A-B04D-0A226F410CF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

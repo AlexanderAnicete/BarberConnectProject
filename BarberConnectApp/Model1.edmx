@@ -1,0 +1,929 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BARBERCONNECT_APPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Administrator">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="25" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="25" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="25" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="25" />
+          <Property Name="PasswordID" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="LocationID" Type="int" />
+          <Property Name="ReviewID" Type="int" />
+          <Property Name="BarberID" Type="int" />
+        </EntityType>
+        <EntityType Name="Barber">
+          <Key>
+            <PropertyRef Name="BarberID" />
+          </Key>
+          <Property Name="BarberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="25" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="25" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="25" />
+          <Property Name="PhoneNumber" Type="int" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="25" />
+          <Property Name="PasswordID" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="LocationID" Type="int" />
+          <Property Name="ReviewID" Type="int" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="25" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="25" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="25" />
+          <Property Name="PhoneNumber" Type="int" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="25" />
+          <Property Name="PasswordID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReviewID" Type="int" />
+          <Property Name="LocationID" Type="int" />
+        </EntityType>
+        <EntityType Name="LocationInfo">
+          <Key>
+            <PropertyRef Name="LocationID" />
+          </Key>
+          <Property Name="LocationID" Type="int" Nullable="false" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Zip" Type="int" />
+          <Property Name="Country" Type="nvarchar" MaxLength="20" />
+          <Property Name="BarberID" Type="int" />
+        </EntityType>
+        <EntityType Name="Reviews">
+          <Key>
+            <PropertyRef Name="ReviewID" />
+          </Key>
+          <Property Name="ReviewID" Type="int" Nullable="false" />
+          <Property Name="BarberID" Type="nvarchar" MaxLength="25" />
+          <Property Name="Review" Type="nvarchar" MaxLength="3000" />
+          <Property Name="Stars" Type="int" />
+          <Property Name="CustomerID" Type="int" />
+        </EntityType>
+        <EntityType Name="SelectionPage">
+          <Key>
+            <PropertyRef Name="BarberID" />
+          </Key>
+          <Property Name="BarberID" Type="int" Nullable="false" />
+          <Property Name="Location1" Type="nvarchar" MaxLength="100" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <Association Name="FK_Administrator_Administrator">
+          <End Role="Administrator" Type="Self.Administrator" Multiplicity="1" />
+          <End Role="Administrator1" Type="Self.Administrator" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Administrator">
+              <PropertyRef Name="AdminID" />
+            </Principal>
+            <Dependent Role="Administrator1">
+              <PropertyRef Name="AdminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrator_Administrator1">
+          <End Role="Administrator" Type="Self.Administrator" Multiplicity="1" />
+          <End Role="Administrator1" Type="Self.Administrator" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Administrator">
+              <PropertyRef Name="AdminID" />
+            </Principal>
+            <Dependent Role="Administrator1">
+              <PropertyRef Name="AdminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrator_Barber">
+          <End Role="Barber" Type="Self.Barber" Multiplicity="0..1" />
+          <End Role="Administrator" Type="Self.Administrator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Barber">
+              <PropertyRef Name="BarberID" />
+            </Principal>
+            <Dependent Role="Administrator">
+              <PropertyRef Name="BarberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrator_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Administrator" Type="Self.Administrator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Administrator">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrator_LocationInfo">
+          <End Role="LocationInfo" Type="Self.LocationInfo" Multiplicity="0..1" />
+          <End Role="Administrator" Type="Self.Administrator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationInfo">
+              <PropertyRef Name="LocationID" />
+            </Principal>
+            <Dependent Role="Administrator">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrator_SelectionPage">
+          <End Role="SelectionPage" Type="Self.SelectionPage" Multiplicity="0..1" />
+          <End Role="Administrator" Type="Self.Administrator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SelectionPage">
+              <PropertyRef Name="BarberID" />
+            </Principal>
+            <Dependent Role="Administrator">
+              <PropertyRef Name="BarberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Barber_Barber">
+          <End Role="Barber" Type="Self.Barber" Multiplicity="1" />
+          <End Role="Barber1" Type="Self.Barber" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Barber">
+              <PropertyRef Name="BarberID" />
+            </Principal>
+            <Dependent Role="Barber1">
+              <PropertyRef Name="BarberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Barber_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Barber" Type="Self.Barber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Barber">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Barber_LocationInfo">
+          <End Role="LocationInfo" Type="Self.LocationInfo" Multiplicity="0..1" />
+          <End Role="Barber" Type="Self.Barber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationInfo">
+              <PropertyRef Name="LocationID" />
+            </Principal>
+            <Dependent Role="Barber">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Barber_Reviews">
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="0..1" />
+          <End Role="Barber" Type="Self.Barber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reviews">
+              <PropertyRef Name="ReviewID" />
+            </Principal>
+            <Dependent Role="Barber">
+              <PropertyRef Name="ReviewID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer1" Type="Self.Customer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Customer1">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Customer1">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer1" Type="Self.Customer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Customer1">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Customer2">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer1" Type="Self.Customer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Customer1">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Customer3">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer1" Type="Self.Customer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Customer1">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_LocationInfo">
+          <End Role="LocationInfo" Type="Self.LocationInfo" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationInfo">
+              <PropertyRef Name="LocationID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Reviews">
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reviews">
+              <PropertyRef Name="ReviewID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="ReviewID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LocationInfo_LocationInfo">
+          <End Role="LocationInfo" Type="Self.LocationInfo" Multiplicity="1" />
+          <End Role="LocationInfo1" Type="Self.LocationInfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="LocationInfo">
+              <PropertyRef Name="LocationID" />
+            </Principal>
+            <Dependent Role="LocationInfo1">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_Reviews">
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="1" />
+          <End Role="Reviews1" Type="Self.Reviews" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Reviews">
+              <PropertyRef Name="ReviewID" />
+            </Principal>
+            <Dependent Role="Reviews1">
+              <PropertyRef Name="ReviewID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SelectionPage_Barber">
+          <End Role="Barber" Type="Self.Barber" Multiplicity="1" />
+          <End Role="SelectionPage" Type="Self.SelectionPage" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Barber">
+              <PropertyRef Name="BarberID" />
+            </Principal>
+            <Dependent Role="SelectionPage">
+              <PropertyRef Name="BarberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BARBERCONNECT_APPModelStoreContainer">
+          <EntitySet Name="Administrator" EntityType="Self.Administrator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Barber" EntityType="Self.Barber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LocationInfo" EntityType="Self.LocationInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SelectionPage" EntityType="Self.SelectionPage" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Administrator_Administrator" Association="Self.FK_Administrator_Administrator">
+            <End Role="Administrator" EntitySet="Administrator" />
+            <End Role="Administrator1" EntitySet="Administrator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrator_Administrator1" Association="Self.FK_Administrator_Administrator1">
+            <End Role="Administrator" EntitySet="Administrator" />
+            <End Role="Administrator1" EntitySet="Administrator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrator_Barber" Association="Self.FK_Administrator_Barber">
+            <End Role="Barber" EntitySet="Barber" />
+            <End Role="Administrator" EntitySet="Administrator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrator_Customer" Association="Self.FK_Administrator_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Administrator" EntitySet="Administrator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrator_LocationInfo" Association="Self.FK_Administrator_LocationInfo">
+            <End Role="LocationInfo" EntitySet="LocationInfo" />
+            <End Role="Administrator" EntitySet="Administrator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrator_SelectionPage" Association="Self.FK_Administrator_SelectionPage">
+            <End Role="SelectionPage" EntitySet="SelectionPage" />
+            <End Role="Administrator" EntitySet="Administrator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Barber_Barber" Association="Self.FK_Barber_Barber">
+            <End Role="Barber" EntitySet="Barber" />
+            <End Role="Barber1" EntitySet="Barber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Barber_Customer" Association="Self.FK_Barber_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Barber" EntitySet="Barber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Barber_LocationInfo" Association="Self.FK_Barber_LocationInfo">
+            <End Role="LocationInfo" EntitySet="LocationInfo" />
+            <End Role="Barber" EntitySet="Barber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Barber_Reviews" Association="Self.FK_Barber_Reviews">
+            <End Role="Reviews" EntitySet="Reviews" />
+            <End Role="Barber" EntitySet="Barber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Customer" Association="Self.FK_Customer_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer1" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Customer1" Association="Self.FK_Customer_Customer1">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer1" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Customer2" Association="Self.FK_Customer_Customer2">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer1" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Customer3" Association="Self.FK_Customer_Customer3">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customer1" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_LocationInfo" Association="Self.FK_Customer_LocationInfo">
+            <End Role="LocationInfo" EntitySet="LocationInfo" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Reviews" Association="Self.FK_Customer_Reviews">
+            <End Role="Reviews" EntitySet="Reviews" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LocationInfo_LocationInfo" Association="Self.FK_LocationInfo_LocationInfo">
+            <End Role="LocationInfo" EntitySet="LocationInfo" />
+            <End Role="LocationInfo1" EntitySet="LocationInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_Reviews" Association="Self.FK_Reviews_Reviews">
+            <End Role="Reviews" EntitySet="Reviews" />
+            <End Role="Reviews1" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SelectionPage_Barber" Association="Self.FK_SelectionPage_Barber">
+            <End Role="Barber" EntitySet="Barber" />
+            <End Role="SelectionPage" EntitySet="SelectionPage" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BARBERCONNECT_APPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Administrator">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="LocationID" Type="Int32" />
+          <Property Name="ReviewID" Type="Int32" />
+          <Property Name="BarberID" Type="Int32" />
+          <NavigationProperty Name="Administrator1" Relationship="Self.FK_Administrator_Administrator" FromRole="Administrator" ToRole="Administrator1" />
+          <NavigationProperty Name="Barber" Relationship="Self.FK_Administrator_Barber" FromRole="Administrator" ToRole="Barber" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Administrator_Customer" FromRole="Administrator" ToRole="Customer" />
+          <NavigationProperty Name="LocationInfo" Relationship="Self.FK_Administrator_LocationInfo" FromRole="Administrator" ToRole="LocationInfo" />
+          <NavigationProperty Name="SelectionPage" Relationship="Self.FK_Administrator_SelectionPage" FromRole="Administrator" ToRole="SelectionPage" />
+        </EntityType>
+        <EntityType Name="Barber">
+          <Key>
+            <PropertyRef Name="BarberID" />
+          </Key>
+          <Property Name="BarberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="LocationID" Type="Int32" />
+          <Property Name="ReviewID" Type="Int32" />
+          <NavigationProperty Name="Administrators" Relationship="Self.FK_Administrator_Barber" FromRole="Barber" ToRole="Administrator" />
+          <NavigationProperty Name="Barber1" Relationship="Self.FK_Barber_Barber" FromRole="Barber" ToRole="Barber1" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Barber_Customer" FromRole="Barber" ToRole="Customer" />
+          <NavigationProperty Name="LocationInfo" Relationship="Self.FK_Barber_LocationInfo" FromRole="Barber" ToRole="LocationInfo" />
+          <NavigationProperty Name="Review" Relationship="Self.FK_Barber_Reviews" FromRole="Barber" ToRole="Reviews" />
+          <NavigationProperty Name="SelectionPage" Relationship="Self.FK_SelectionPage_Barber" FromRole="Barber" ToRole="SelectionPage" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReviewID" Type="Int32" />
+          <Property Name="LocationID" Type="Int32" />
+          <NavigationProperty Name="Administrators" Relationship="Self.FK_Administrator_Customer" FromRole="Customer" ToRole="Administrator" />
+          <NavigationProperty Name="Barbers" Relationship="Self.FK_Barber_Customer" FromRole="Customer" ToRole="Barber" />
+          <NavigationProperty Name="Customer1" Relationship="Self.FK_Customer_Customer" FromRole="Customer" ToRole="Customer1" />
+          <NavigationProperty Name="LocationInfo" Relationship="Self.FK_Customer_LocationInfo" FromRole="Customer" ToRole="LocationInfo" />
+          <NavigationProperty Name="Review" Relationship="Self.FK_Customer_Reviews" FromRole="Customer" ToRole="Reviews" />
+        </EntityType>
+        <EntityType Name="LocationInfo">
+          <Key>
+            <PropertyRef Name="LocationID" />
+          </Key>
+          <Property Name="LocationID" Type="Int32" Nullable="false" />
+          <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="Int32" />
+          <Property Name="Country" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BarberID" Type="Int32" />
+          <NavigationProperty Name="Administrators" Relationship="Self.FK_Administrator_LocationInfo" FromRole="LocationInfo" ToRole="Administrator" />
+          <NavigationProperty Name="Barbers" Relationship="Self.FK_Barber_LocationInfo" FromRole="LocationInfo" ToRole="Barber" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_LocationInfo" FromRole="LocationInfo" ToRole="Customer" />
+          <NavigationProperty Name="LocationInfo1" Relationship="Self.FK_LocationInfo_LocationInfo" FromRole="LocationInfo" ToRole="LocationInfo1" />
+          <NavigationProperty Name="LocationInfo2" Relationship="Self.FK_LocationInfo_LocationInfo" FromRole="LocationInfo1" ToRole="LocationInfo" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="ReviewID" />
+          </Key>
+          <Property Name="ReviewID" Type="Int32" Nullable="false" />
+          <Property Name="BarberID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Review1" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="Stars" Type="Int32" />
+          <Property Name="CustomerID" Type="Int32" />
+          <NavigationProperty Name="Barbers" Relationship="Self.FK_Barber_Reviews" FromRole="Reviews" ToRole="Barber" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_Reviews" FromRole="Reviews" ToRole="Customer" />
+          <NavigationProperty Name="Reviews1" Relationship="Self.FK_Reviews_Reviews" FromRole="Reviews" ToRole="Reviews1" />
+        </EntityType>
+        <EntityType Name="SelectionPage">
+          <Key>
+            <PropertyRef Name="BarberID" />
+          </Key>
+          <Property Name="BarberID" Type="Int32" Nullable="false" />
+          <Property Name="Location1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Administrators" Relationship="Self.FK_Administrator_SelectionPage" FromRole="SelectionPage" ToRole="Administrator" />
+          <NavigationProperty Name="Barber" Relationship="Self.FK_SelectionPage_Barber" FromRole="SelectionPage" ToRole="Barber" />
+        </EntityType>
+        <Association Name="FK_Administrator_Administrator">
+          <End Role="Administrator" Type="Self.Administrator" Multiplicity="1" />
+          <End Role="Administrator1" Type="Self.Administrator" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Administrator">
+              <PropertyRef Name="AdminID" />
+            </Principal>
+            <Dependent Role="Administrator1">
+              <PropertyRef Name="AdminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrator_Administrator1">
+          <End Role="Administrator" Type="Self.Administrator" Multiplicity="1" />
+          <End Role="Administrator1" Type="Self.Administrator" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Administrator">
+              <PropertyRef Name="AdminID" />
+            </Principal>
+            <Dependent Role="Administrator1">
+              <PropertyRef Name="AdminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrator_Barber">
+          <End Role="Barber" Type="Self.Barber" Multiplicity="0..1" />
+          <End Role="Administrator" Type="Self.Administrator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Barber">
+              <PropertyRef Name="BarberID" />
+            </Principal>
+            <Dependent Role="Administrator">
+              <PropertyRef Name="BarberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrator_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Administrator" Type="Self.Administrator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Administrator">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrator_LocationInfo">
+          <End Role="LocationInfo" Type="Self.LocationInfo" Multiplicity="0..1" />
+          <End Role="Administrator" Type="Self.Administrator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationInfo">
+              <PropertyRef Name="LocationID" />
+            </Principal>
+            <Dependent Role="Administrator">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Administrator_SelectionPage">
+          <End Role="SelectionPage" Type="Self.SelectionPage" Multiplicity="0..1" />
+          <End Role="Administrator" Type="Self.Administrator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SelectionPage">
+              <PropertyRef Name="BarberID" />
+            </Principal>
+            <Dependent Role="Administrator">
+              <PropertyRef Name="BarberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Barber_Barber">
+          <End Role="Barber" Type="Self.Barber" Multiplicity="1" />
+          <End Role="Barber1" Type="Self.Barber" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Barber">
+              <PropertyRef Name="BarberID" />
+            </Principal>
+            <Dependent Role="Barber1">
+              <PropertyRef Name="BarberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Barber_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Barber" Type="Self.Barber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Barber">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Barber_LocationInfo">
+          <End Role="LocationInfo" Type="Self.LocationInfo" Multiplicity="0..1" />
+          <End Role="Barber" Type="Self.Barber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationInfo">
+              <PropertyRef Name="LocationID" />
+            </Principal>
+            <Dependent Role="Barber">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Barber_Reviews">
+          <End Role="Reviews" Type="Self.Review" Multiplicity="0..1" />
+          <End Role="Barber" Type="Self.Barber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reviews">
+              <PropertyRef Name="ReviewID" />
+            </Principal>
+            <Dependent Role="Barber">
+              <PropertyRef Name="ReviewID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SelectionPage_Barber">
+          <End Role="Barber" Type="Self.Barber" Multiplicity="1" />
+          <End Role="SelectionPage" Type="Self.SelectionPage" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Barber">
+              <PropertyRef Name="BarberID" />
+            </Principal>
+            <Dependent Role="SelectionPage">
+              <PropertyRef Name="BarberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer1" Type="Self.Customer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Customer1">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Customer1">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer1" Type="Self.Customer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Customer1">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Customer2">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer1" Type="Self.Customer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Customer1">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Customer3">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer1" Type="Self.Customer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Customer1">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_LocationInfo">
+          <End Role="LocationInfo" Type="Self.LocationInfo" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationInfo">
+              <PropertyRef Name="LocationID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Reviews">
+          <End Role="Reviews" Type="Self.Review" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reviews">
+              <PropertyRef Name="ReviewID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="ReviewID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LocationInfo_LocationInfo">
+          <End Role="LocationInfo" Type="Self.LocationInfo" Multiplicity="1" />
+          <End Role="LocationInfo1" Type="Self.LocationInfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="LocationInfo">
+              <PropertyRef Name="LocationID" />
+            </Principal>
+            <Dependent Role="LocationInfo1">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_Reviews">
+          <End Role="Reviews" Type="Self.Review" Multiplicity="1" />
+          <End Role="Reviews1" Type="Self.Review" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Reviews">
+              <PropertyRef Name="ReviewID" />
+            </Principal>
+            <Dependent Role="Reviews1">
+              <PropertyRef Name="ReviewID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BARBERCONNECT_APPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administrators" EntityType="Self.Administrator" />
+          <EntitySet Name="Barbers" EntityType="Self.Barber" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="LocationInfoes" EntityType="Self.LocationInfo" />
+          <EntitySet Name="Reviews" EntityType="Self.Review" />
+          <EntitySet Name="SelectionPages" EntityType="Self.SelectionPage" />
+          <AssociationSet Name="FK_Administrator_Administrator" Association="Self.FK_Administrator_Administrator">
+            <End Role="Administrator" EntitySet="Administrators" />
+            <End Role="Administrator1" EntitySet="Administrators" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrator_Administrator1" Association="Self.FK_Administrator_Administrator1">
+            <End Role="Administrator" EntitySet="Administrators" />
+            <End Role="Administrator1" EntitySet="Administrators" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrator_Barber" Association="Self.FK_Administrator_Barber">
+            <End Role="Barber" EntitySet="Barbers" />
+            <End Role="Administrator" EntitySet="Administrators" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrator_Customer" Association="Self.FK_Administrator_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Administrator" EntitySet="Administrators" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrator_LocationInfo" Association="Self.FK_Administrator_LocationInfo">
+            <End Role="LocationInfo" EntitySet="LocationInfoes" />
+            <End Role="Administrator" EntitySet="Administrators" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Administrator_SelectionPage" Association="Self.FK_Administrator_SelectionPage">
+            <End Role="SelectionPage" EntitySet="SelectionPages" />
+            <End Role="Administrator" EntitySet="Administrators" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Barber_Barber" Association="Self.FK_Barber_Barber">
+            <End Role="Barber" EntitySet="Barbers" />
+            <End Role="Barber1" EntitySet="Barbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Barber_Customer" Association="Self.FK_Barber_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Barber" EntitySet="Barbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Barber_LocationInfo" Association="Self.FK_Barber_LocationInfo">
+            <End Role="LocationInfo" EntitySet="LocationInfoes" />
+            <End Role="Barber" EntitySet="Barbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Barber_Reviews" Association="Self.FK_Barber_Reviews">
+            <End Role="Reviews" EntitySet="Reviews" />
+            <End Role="Barber" EntitySet="Barbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SelectionPage_Barber" Association="Self.FK_SelectionPage_Barber">
+            <End Role="Barber" EntitySet="Barbers" />
+            <End Role="SelectionPage" EntitySet="SelectionPages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Customer" Association="Self.FK_Customer_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Customer1" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Customer1" Association="Self.FK_Customer_Customer1">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Customer1" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Customer2" Association="Self.FK_Customer_Customer2">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Customer1" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Customer3" Association="Self.FK_Customer_Customer3">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Customer1" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_LocationInfo" Association="Self.FK_Customer_LocationInfo">
+            <End Role="LocationInfo" EntitySet="LocationInfoes" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Reviews" Association="Self.FK_Customer_Reviews">
+            <End Role="Reviews" EntitySet="Reviews" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LocationInfo_LocationInfo" Association="Self.FK_LocationInfo_LocationInfo">
+            <End Role="LocationInfo" EntitySet="LocationInfoes" />
+            <End Role="LocationInfo1" EntitySet="LocationInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_Reviews" Association="Self.FK_Reviews_Reviews">
+            <End Role="Reviews" EntitySet="Reviews" />
+            <End Role="Reviews1" EntitySet="Reviews" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BARBERCONNECT_APPModelStoreContainer" CdmEntityContainer="BARBERCONNECT_APPEntities">
+          <EntitySetMapping Name="Administrators">
+            <EntityTypeMapping TypeName="BARBERCONNECT_APPModel.Administrator">
+              <MappingFragment StoreEntitySet="Administrator">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PasswordID" ColumnName="PasswordID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="ReviewID" ColumnName="ReviewID" />
+                <ScalarProperty Name="BarberID" ColumnName="BarberID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Barbers">
+            <EntityTypeMapping TypeName="BARBERCONNECT_APPModel.Barber">
+              <MappingFragment StoreEntitySet="Barber">
+                <ScalarProperty Name="BarberID" ColumnName="BarberID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PasswordID" ColumnName="PasswordID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="ReviewID" ColumnName="ReviewID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="BARBERCONNECT_APPModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PasswordID" ColumnName="PasswordID" />
+                <ScalarProperty Name="ReviewID" ColumnName="ReviewID" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocationInfoes">
+            <EntityTypeMapping TypeName="BARBERCONNECT_APPModel.LocationInfo">
+              <MappingFragment StoreEntitySet="LocationInfo">
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="BarberID" ColumnName="BarberID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reviews">
+            <EntityTypeMapping TypeName="BARBERCONNECT_APPModel.Review">
+              <MappingFragment StoreEntitySet="Reviews">
+                <ScalarProperty Name="ReviewID" ColumnName="ReviewID" />
+                <ScalarProperty Name="BarberID" ColumnName="BarberID" />
+                <ScalarProperty Name="Review1" ColumnName="Review" />
+                <ScalarProperty Name="Stars" ColumnName="Stars" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SelectionPages">
+            <EntityTypeMapping TypeName="BARBERCONNECT_APPModel.SelectionPage">
+              <MappingFragment StoreEntitySet="SelectionPage">
+                <ScalarProperty Name="BarberID" ColumnName="BarberID" />
+                <ScalarProperty Name="Location1" ColumnName="Location1" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
