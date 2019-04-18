@@ -18,8 +18,8 @@ of their work, create a bio to introduce themselves, post their schedule, prices
 
 ---
 
-Requirements
----
+### Requirements
+
 |Requirements ID | Requirements | Implemented | Tested |
 
 | :---: | --- | :---: | :---: |
@@ -38,24 +38,7 @@ Requirements
 
 | 7 | 5 Star Rating System | No | No |
 
-| 8 |  | No | No |
-
-| | | |
-
-| | | |
-
-| | | |
-
-| | | |
-
-| | | |
-
-| | | |
-
-| | | |
-
-| | | |
-
+| 8 | Add Pictures to Profile | No | No |
 
 | --- | --- | --- | --- |
 
