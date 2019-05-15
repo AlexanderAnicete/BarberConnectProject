@@ -56,7 +56,7 @@ SQL Scripts
 ![Databse 2](https://user-images.githubusercontent.com/46760301/56192560-82e87c80-5fe3-11e9-83e5-4e859b7e40c7.GIF)
 ---
 
-Wireframe ideas for mobile
+Wireframe ideas 
 ---
 ![Home page](https://user-images.githubusercontent.com/46760301/57788463-003f0400-76ec-11e9-9ba5-c788640878d7.JPG)
 ![Profile page](https://user-images.githubusercontent.com/46760301/57788469-0208c780-76ec-11e9-96cd-c0edd260c730.JPG)
