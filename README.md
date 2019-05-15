@@ -31,7 +31,15 @@ of their work, create a bio to introduce themselves, post their schedule, prices
 | 6 | Create and edit biography | No | No |
 | 7 | 5 Star Rating System | No | No |
 | 8 | Add Pictures to Profile | No | No |
-
+| 9 | Add tabs for each person to search | no | |
+| 10 | Add location button | | |
+| 11 | Have database for uploaded picture | | |
+| 12 | Allow user to search for barbers locally | | |
+| 13 | Have barbers show how close they are to users | | |
+| 14 | Have the 5 star rating in the location tabs | | |
+| 15 |  | | |
+| 16 |  | | |
+| 17 |  | | |
 
 
 --
