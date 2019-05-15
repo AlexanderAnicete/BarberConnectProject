@@ -50,6 +50,10 @@ SQL Scripts
 
 Wireframe ideas for mobile
 ---
+![Home page](https://user-images.githubusercontent.com/46760301/57788463-003f0400-76ec-11e9-9ba5-c788640878d7.JPG)
+![Profile page](https://user-images.githubusercontent.com/46760301/57788469-0208c780-76ec-11e9-96cd-c0edd260c730.JPG)
+![Search](https://user-images.githubusercontent.com/46760301/57788471-03d28b00-76ec-11e9-9ce4-1c45f8383dce.JPG)
+
 ![WireFrame](https://user-images.githubusercontent.com/46760301/56192587-91369880-5fe3-11e9-97a3-bd0050db43e9.GIF)
 For the wireframe I wanted to make it where they can post their pictures, a bio, show their location, their prices, and even get rated by customers they've served to give a customer some assurance when choosing their barber. I will have an up and running wireframe soon.  
  
