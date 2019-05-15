@@ -80,3 +80,9 @@ Current Page Progress
 Class Diagram
 ---
 ![Class Diagram](https://user-images.githubusercontent.com/46760301/56192579-8c71e480-5fe3-11e9-8cbe-9137b958d278.GIF)
+
+---
+What I've Learned
+---
+
+The time it takes to accomplish a certain scope such as this project. 
